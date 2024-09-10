@@ -1,4 +1,4 @@
-package com.projectHR.app.dao.service;
+package com.projectHR.app.service;
 
 import com.projectHR.app.dao.EmployeeDAO;
 import com.projectHR.app.employee.Employee;
@@ -19,6 +19,6 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public List<Employee> findAll() {
-        return employeeDAO.findAll();
+        return employeeDAO.findEmployee();
     }
 }

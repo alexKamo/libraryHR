@@ -1,12 +1,13 @@
-package com.projectHR.app.dao.service;
+package com.projectHR.app.service;
 
 import com.projectHR.app.dao.HR_UserDAO;
-import com.projectHR.app.dao.HR_UserDAOImpl;
 import com.projectHR.app.user.HR_User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class HRUserServiceImpl implements HRUserService{
 
     HR_UserDAO userDAO;

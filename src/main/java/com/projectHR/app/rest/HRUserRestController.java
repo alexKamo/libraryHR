@@ -1,7 +1,6 @@
 package com.projectHR.app.rest;
 
-import com.projectHR.app.dao.HR_UserDAO;
-import com.projectHR.app.dao.service.HRUserService;
+import com.projectHR.app.service.HRUserService;
 import com.projectHR.app.user.HR_User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

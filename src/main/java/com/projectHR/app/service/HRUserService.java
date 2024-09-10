@@ -1,4 +1,4 @@
-package com.projectHR.app.dao.service;
+package com.projectHR.app.service;
 
 import com.projectHR.app.user.HR_User;
 
