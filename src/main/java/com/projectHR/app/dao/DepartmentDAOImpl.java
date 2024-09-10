@@ -1,4 +1,4 @@
-package com.projectHR.app.implementations;
+package com.projectHR.app.dao;
 
 
 import com.projectHR.app.dao.DepartmentDAO;
