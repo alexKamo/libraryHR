@@ -1,9 +1,12 @@
 package com.projectHR.app.dao;
 
+
 import com.projectHR.app.employee.Employee;
+
+import java.util.List;
 
 public interface EmployeeDAO {
 
-    void save(Employee theEmployee);
+  List<Employee> findAll();
 
 }
