@@ -25,4 +25,5 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         List<Employee> employees = query.getResultList();
         return employees;
     }
+
 }
