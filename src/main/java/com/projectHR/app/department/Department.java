@@ -12,7 +12,7 @@ public class Department {
     private int depId;
 
     @Column(name = "dep_name")
-    private Department depName;
+    private String depName;
 
     @Column(name = "location")
     private String location;
@@ -20,7 +20,7 @@ public class Department {
     public Department() {
     }
 
-    public Department(int depId, Department depName, String location) {
+    public Department(int depId, String depName, String location) {
         this.depId = depId;
         this.depName = depName;
         this.location = location;
@@ -34,11 +34,11 @@ public class Department {
         this.depId = depId;
     }
 
-    public Department getDepName() {
+    public String getDepName() {
         return depName;
     }
 
-    public void setDepName(Department depName) {
+    public void setDepName(String depName) {
         this.depName = depName;
     }
 

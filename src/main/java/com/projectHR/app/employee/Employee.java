@@ -25,15 +25,15 @@ public class Employee {
     private int salary;
 
     @Column(name = "department_name")
-    private Department depName;
+    private String depName;
 
     @Column(name = "department_id")
-    private Department depId;
+    private int depId;
 
     public Employee() {
     }
 
-    public Employee(String fullName, int id, int startDate, int endDate, int salary, Department depName, Department depId) {
+    public Employee(String fullName, int id, int startDate, int endDate, int salary, String depName, int depId) {
         this.fullName = fullName;
         this.id = id;
         this.startDate = startDate;
@@ -83,19 +83,19 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Department getDepName() {
+    public String getDepName() {
         return depName;
     }
 
-    public void setDepName(Department depName) {
+    public void setDepName(String depName) {
         this.depName = depName;
     }
 
-    public Department getDepId() {
+    public int getDepId() {
         return depId;
     }
 
-    public void setDepId(Department depId) {
+    public void setDepId(int depId) {
         this.depId = depId;
     }
 }
