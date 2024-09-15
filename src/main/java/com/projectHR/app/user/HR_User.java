@@ -15,7 +15,7 @@ public class HR_User {
     private String fullName;
 
     @Column(name = "date_of_birth")
-    private int dateOfBirth;
+    private String dateOfBirth;
 
     @Column(name = "address")
     private String address;
@@ -23,19 +23,11 @@ public class HR_User {
     public HR_User() {
     }
 
-    public HR_User(String fullName, int userId, int dateOfBirth, String address) {
-        this.fullName = fullName;
+    public HR_User(int userId, String fullName, String dateOfBirth, String address) {
         this.userId = userId;
+        this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public int getUserId() {
@@ -46,11 +38,19 @@ public class HR_User {
         this.userId = userId;
     }
 
-    public int getDateOfBirth() {
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

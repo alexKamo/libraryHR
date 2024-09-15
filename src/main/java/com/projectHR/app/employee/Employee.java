@@ -16,10 +16,10 @@ public class Employee {
     private String fullName;
 
     @Column(name = "start_date")
-    private int startDate;
+    private String startDate;
 
     @Column(name = "end_date")
-    private int endDate;
+    private String endDate;
 
     @Column(name = "salary")
     private int salary;
@@ -33,22 +33,14 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String fullName, int id, int startDate, int endDate, int salary, String depName, int depId) {
-        this.fullName = fullName;
+    public Employee(int id, String fullName, String startDate, String endDate, int salary, String depName, int depId) {
         this.id = id;
+        this.fullName = fullName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.salary = salary;
         this.depName = depName;
         this.depId = depId;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public int getId() {
@@ -59,19 +51,27 @@ public class Employee {
         this.id = id;
     }
 
-    public int getStartDate() {
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(int startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public int getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(int endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
