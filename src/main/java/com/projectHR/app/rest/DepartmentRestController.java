@@ -1,7 +1,6 @@
 package com.projectHR.app.rest;
 
 import com.projectHR.app.department.Department;
-import com.projectHR.app.employee.Employee;
 import com.projectHR.app.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

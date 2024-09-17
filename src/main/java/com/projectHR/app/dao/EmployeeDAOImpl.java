@@ -1,6 +1,5 @@
 package com.projectHR.app.dao;
 
-import com.projectHR.app.dao.EmployeeDAO;
 import com.projectHR.app.employee.Employee;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
