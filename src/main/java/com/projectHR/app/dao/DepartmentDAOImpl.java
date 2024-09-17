@@ -3,6 +3,7 @@ package com.projectHR.app.dao;
 
 import com.projectHR.app.dao.DepartmentDAO;
 import com.projectHR.app.department.Department;
+import com.projectHR.app.employee.Employee;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,20 @@ public class DepartmentDAOImpl implements DepartmentDAO {
         TypedQuery<Department> query = entityManager.createQuery("from department",Department.class);
         List<Department> departments = query.getResultList();
         return departments;
+    }
+    @Override
+    public Department findByIdDepartment(int id) {
+        return entityManager.find(Department.class,id);
+    }
+
+    @Override
+    public Department saveDepartment(Department department) {
+        return entityManager.merge(department);
+    }
+
+    @Override
+    public void deleteByIdDepartment(int id) {
+        Department department = entityManager.find(Department.class,id);
+        entityManager.remove(department);
     }
 }
