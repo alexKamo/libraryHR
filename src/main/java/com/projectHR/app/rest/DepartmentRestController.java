@@ -40,16 +40,16 @@ public class DepartmentRestController {
     }
 
     @PutMapping("/departments")
-    public Employee updateEmployee(@RequestBody Employee employee){
-        Employee emp = employeeService.saveEmployee(employee);
-        return emp;
+    public Department updateDepartment(@RequestBody Department department){
+        Department dep = departmentService.saveDepartment(department);
+        return dep;
     }
 
     @DeleteMapping("/departments/{id}")
-    public String deleteEmployee(@PathVariable int id){
-        Employee employee = employeeService.findByIdEmployee(id);
-        if (employee == null) return "nope";
-        employeeService.deleteByIdEmployee(id);
+    public String deleteDepartment(@PathVariable int id){
+        Department department = departmentService.findByIdDepartment(id);
+        if (department == null) return "nope";
+        departmentService.deleteByIdDepartment(id);
         return "Deleted departments with id: " + id;
     }
 }

@@ -1,6 +1,7 @@
 package com.projectHR.app.dao;
 
 import com.projectHR.app.dao.HR_UserDAO;
+import com.projectHR.app.department.Department;
 import com.projectHR.app.employee.Employee;
 import com.projectHR.app.user.HR_User;
 import jakarta.persistence.EntityManager;
@@ -26,5 +27,20 @@ public class HR_UserDAOImpl implements HR_UserDAO {
         TypedQuery<HR_User> query = entityManager.createQuery("from hr_user", HR_User.class);
         List<HR_User> users = query.getResultList();
         return users;
+    }
+    @Override
+    public HR_User findByIdHrUser(int id) {
+        return entityManager.find(HR_User.class,id);
+    }
+
+    @Override
+    public HR_User saveHrUser(HR_User hrUser) {
+        return entityManager.merge(hrUser);
+    }
+
+    @Override
+    public void deleteByIdHrUser(int id) {
+        HR_User hrUser = entityManager.find(HR_User.class,id);
+        entityManager.remove(hrUser);
     }
 }
