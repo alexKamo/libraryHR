@@ -22,7 +22,7 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
     @Override
     public List<Department> findDepartment() {
-        TypedQuery<Department> query = entityManager.createQuery("from department",Department.class);
+        TypedQuery<Department> query = entityManager.createQuery("from Department",Department.class);
         List<Department> departments = query.getResultList();
         return departments;
     }

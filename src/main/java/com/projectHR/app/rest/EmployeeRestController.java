@@ -21,6 +21,7 @@ public class EmployeeRestController {
 
     @GetMapping("/employees")
     public List<Employee> getEmployees(){
+        System.out.println("aaa");
         return employeeService.findEmployee();
     }
 

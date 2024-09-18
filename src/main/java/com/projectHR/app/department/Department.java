@@ -49,4 +49,13 @@ public class Department {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "depId=" + depId +
+                ", depName='" + depName + '\'' +
+                ", location='" + location + '\'' +
+                '}';
+    }
 }

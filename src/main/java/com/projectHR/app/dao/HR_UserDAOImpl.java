@@ -21,7 +21,7 @@ public class HR_UserDAOImpl implements HR_UserDAO {
 
     @Override
     public List<HR_User> findUser() {
-        TypedQuery<HR_User> query = entityManager.createQuery("from hr_user", HR_User.class);
+        TypedQuery<HR_User> query = entityManager.createQuery("from Hr_user", HR_User.class);
         List<HR_User> users = query.getResultList();
         return users;
     }
