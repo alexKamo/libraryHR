@@ -39,13 +39,13 @@ public class EmployeeRestController {
         return emp;
     }
 
-    @PutMapping("/employees")
+    @PutMapping("/employee")
     public Employee updateEmployee(@RequestBody Employee employee){
         Employee emp = employeeService.saveEmployee(employee);
         return emp;
     }
 
-    @DeleteMapping("/employees/{id}")
+    @DeleteMapping("/employee/{id}")
     public String deleteEmployee(@PathVariable int id){
         Employee employee = employeeService.findByIdEmployee(id);
         if (employee == null) return "nope";

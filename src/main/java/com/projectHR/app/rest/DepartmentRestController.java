@@ -37,13 +37,13 @@ public class DepartmentRestController {
         return dep;
     }
 
-    @PutMapping("/departments")
+    @PutMapping("/department")
     public Department updateDepartment(@RequestBody Department department){
         Department dep = departmentService.saveDepartment(department);
         return dep;
     }
 
-    @DeleteMapping("/departments/{id}")
+    @DeleteMapping("/department/{id}")
     public String deleteDepartment(@PathVariable int id){
         Department department = departmentService.findByIdDepartment(id);
         if (department == null) return "nope";

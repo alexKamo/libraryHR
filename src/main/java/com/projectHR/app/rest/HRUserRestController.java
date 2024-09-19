@@ -37,13 +37,13 @@ public class HRUserRestController {
         return hrUser1;
     }
 
-    @PutMapping("/users")
+    @PutMapping("/user")
     public HR_User updateHrUser(@RequestBody HR_User hrUser){
         HR_User hrUser1 = hrUserService.saveHrUser(hrUser);
         return hrUser1;
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/user/{id}")
     public String deleteHrUser(@PathVariable int id){
         HR_User hrUser = hrUserService.findByIdHrUser(id);
         if (hrUser == null) return "nope";
