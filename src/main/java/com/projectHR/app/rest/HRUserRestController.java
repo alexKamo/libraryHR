@@ -46,7 +46,7 @@ public class HRUserRestController {
     @DeleteMapping("/user/{id}")
     public String deleteHrUser(@PathVariable int id){
         HR_User hrUser = hrUserService.findByIdHrUser(id);
-        if (hrUser == null) return "nope";
+        if (hrUser == null) return "No such users with id: " + id;
         hrUserService.deleteByIdHrUser(id);
         return "Deleted users with id: " + id;
     }

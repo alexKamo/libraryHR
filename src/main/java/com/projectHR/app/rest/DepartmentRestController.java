@@ -46,7 +46,7 @@ public class DepartmentRestController {
     @DeleteMapping("/department/{id}")
     public String deleteDepartment(@PathVariable int id){
         Department department = departmentService.findByIdDepartment(id);
-        if (department == null) return "nope";
+        if (department == null) return "No such department with id: " + id;
         departmentService.deleteByIdDepartment(id);
         return "Deleted departments with id: " + id;
     }

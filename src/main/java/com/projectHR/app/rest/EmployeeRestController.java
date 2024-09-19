@@ -48,7 +48,7 @@ public class EmployeeRestController {
     @DeleteMapping("/employee/{id}")
     public String deleteEmployee(@PathVariable int id){
         Employee employee = employeeService.findByIdEmployee(id);
-        if (employee == null) return "nope";
+        if (employee == null) return "No such employee with id: " + id;
         employeeService.deleteByIdEmployee(id);
         return "Deleted employee with id: " + id;
     }
