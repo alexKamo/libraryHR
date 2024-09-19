@@ -1,9 +1,8 @@
 package com.projectHR.app.rest;
 
-import com.projectHR.app.department.Department;
+import com.projectHR.app.entity.Department;
 import com.projectHR.app.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

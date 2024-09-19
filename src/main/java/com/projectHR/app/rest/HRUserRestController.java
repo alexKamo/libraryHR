@@ -1,7 +1,7 @@
 package com.projectHR.app.rest;
 
 import com.projectHR.app.service.HRUserService;
-import com.projectHR.app.user.HR_User;
+import com.projectHR.app.entity.HR_User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,7 +1,7 @@
 package com.projectHR.app.service;
 
 import com.projectHR.app.dao.EmployeeDAO;
-import com.projectHR.app.employee.Employee;
+import com.projectHR.app.entity.Employee;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

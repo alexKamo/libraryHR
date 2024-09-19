@@ -2,7 +2,7 @@ package com.projectHR.app.rest;
 
 
 import com.projectHR.app.service.EmployeeService;
-import com.projectHR.app.employee.Employee;
+import com.projectHR.app.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

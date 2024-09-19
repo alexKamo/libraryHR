@@ -1,6 +1,6 @@
 package com.projectHR.app.service;
 
-import com.projectHR.app.user.HR_User;
+import com.projectHR.app.entity.HR_User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.projectHR.app.user;
+package com.projectHR.app.entity;
 
 import jakarta.persistence.*;
 
@@ -60,5 +60,15 @@ public class HR_User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "HR_User{" +
+                "userId=" + userId +
+                ", fullName='" + fullName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

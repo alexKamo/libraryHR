@@ -1,4 +1,4 @@
-package com.projectHR.app.department;
+package com.projectHR.app.entity;
 
 import jakarta.persistence.*;
 

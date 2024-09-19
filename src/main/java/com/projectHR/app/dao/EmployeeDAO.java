@@ -1,7 +1,7 @@
 package com.projectHR.app.dao;
 
 
-import com.projectHR.app.employee.Employee;
+import com.projectHR.app.entity.Employee;
 
 import java.util.List;
 

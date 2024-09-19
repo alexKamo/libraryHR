@@ -1,6 +1,5 @@
-package com.projectHR.app.employee;
+package com.projectHR.app.entity;
 
-import com.projectHR.app.department.Department;
 import jakarta.persistence.*;
 
 @Entity

@@ -1,6 +1,6 @@
 package com.projectHR.app.dao;
 
-import com.projectHR.app.employee.Employee;
+import com.projectHR.app.entity.Employee;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
