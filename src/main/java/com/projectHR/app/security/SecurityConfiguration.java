@@ -35,9 +35,9 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests(configurer ->
                         configurer
-                                .requestMatchers("/").hasRole("EMPLOYEE")
-                                .requestMatchers("/leaders/**").hasRole("MANAGER")
-                                .requestMatchers("/systems/**").hasRole("ADMIN")
+                                .requestMatchers("/").hasRole("HR_USER")
+                                .requestMatchers("/leaders/**").hasRole("EMPLOYEE")
+                                .requestMatchers("/systems/**").hasRole("MANAGER")
                                 .anyRequest().authenticated()
                 )
                 .formLogin(form ->
