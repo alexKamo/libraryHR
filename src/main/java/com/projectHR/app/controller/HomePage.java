@@ -25,4 +25,11 @@ public class HomePage {
         return "manager";
     }
 
+    // add request mapping for /users
+
+    @GetMapping("/users")
+    public String showUsers() {
+        return "users";
+    }
+
 }
