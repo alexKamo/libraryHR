@@ -4,3 +4,8 @@
 4. Set up security with DB
 5. User case (descriptions) create story  for access for users and employees and managers
     ex: a users with role "x" can do  login and log out, search departments
+6. Make for users searching list for departments
+7. Employee role can add,update users
+8. Managers can delete users, make add,update,delete employees, add new departments, update or delete departments
+9. User can map to list of employee
+10. Employee can map to list of Managers

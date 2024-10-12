@@ -24,6 +24,16 @@
     Role(s): <span sec:authentication="principal.authorities"></span>
 </p>
 
+<div sec:authorize="hasAnyRole('USER','EMPLOYEE','MANAGER')">
+
+    <!-- Add a link to point to /employee ... this is for the employees -->
+    <p>
+        <a th:href="@{/users}">Helping source for visitors</a>
+    </p>
+
+</div>
+
+
 <div sec:authorize="hasRole('EMPLOYEE')">
 
     <!-- Add a link to point to /employee ... this is for the employees -->
