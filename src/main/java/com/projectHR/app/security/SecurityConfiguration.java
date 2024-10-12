@@ -17,17 +17,8 @@ public class SecurityConfiguration {
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
 
-        JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
+       return new JdbcUserDetailsManager(dataSource);
 
-        // define query to retrieve a user by username
-        jdbcUserDetailsManager.setUsersByUsernameQuery(
-                "select user_id, pw, active from members where user_id=?");
-
-        // define query to retrieve the authorities/roles by username
-        jdbcUserDetailsManager.setAuthoritiesByUsernameQuery(
-                "select user_id, role from roles where user_id=?");
-
-        return jdbcUserDetailsManager;
     }
 
     @Bean
@@ -35,7 +26,7 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests(configurer ->
                         configurer
-                                .requestMatchers("/").hasRole("HR_USER")
+                                .requestMatchers("/").hasAnyRole("EMPLOYEE")
                                 .requestMatchers("/leaders/**").hasRole("EMPLOYEE")
                                 .requestMatchers("/systems/**").hasRole("MANAGER")
                                 .anyRequest().authenticated()
