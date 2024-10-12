@@ -27,9 +27,9 @@ public class HomePage {
 
     // add request mapping for /users
 
-    @GetMapping("/users")
+    @GetMapping("/visitors")
     public String showUsers() {
-        return "users";
+        return "visitors";
     }
 
 }

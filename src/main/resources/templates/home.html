@@ -3,32 +3,28 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
-    <title>Human Resources Home Page</title>
+    <title style="text-align:center;">Human Resources</title>
 </head>
 
 <body>
-<h2>Human Resources Home Page</h2>
+<h2 style="text-align:center;">Human Resources</h2>
 <hr>
 
 <p>
-    Welcome to the Human Resources home page!
+    Welcome: <span sec:authentication="principal.username"></span>
 </p>
 
 <hr>
 
 <!-- display user name and role(s) -->
 
-<p>
-    User: <span sec:authentication="principal.username"></span>
-    <br><br>
-    Role(s): <span sec:authentication="principal.authorities"></span>
-</p>
+
 
 <div sec:authorize="hasAnyRole('USER','EMPLOYEE','MANAGER')">
 
     <!-- Add a link to point to /employee ... this is for the employees -->
     <p>
-        <a th:href="@{/users}">Helping source for visitors</a>
+        <a th:href="@{/visitors}">Helping source for visitors</a>
     </p>
 
 </div>
@@ -39,7 +35,6 @@
     <!-- Add a link to point to /employee ... this is for the employees -->
     <p>
         <a th:href="@{/employee}">Employees Meeting</a>
-        (Only for Employee peeps)
     </p>
 
 </div>
@@ -50,7 +45,9 @@
 
     <p>
         <a th:href="@{/manager}">Manager Meeting</a>
-        (Only for Manager peeps)
+        <br>
+        <a th:href="@{/employee}">Employees Meeting</a>
+
     </p>
 
 </div>
