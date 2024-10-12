@@ -8,24 +8,21 @@ public class HomePage {
 
     @GetMapping("/")
     public String showHome() {
-
         return "home";
     }
 
-    // add a request mapping for /leaders
+    // add a request mapping for /employee
 
-    @GetMapping("/leaders")
-    public String showLeaders() {
-
-        return "leaders";
+    @GetMapping("/employee")
+    public String showEmployee() {
+        return "employee";
     }
 
-    // add request mapping for /systems
+    // add request mapping for /manager
 
-    @GetMapping("/systems")
-    public String showSystems() {
-
-        return "systems";
+    @GetMapping("/manager")
+    public String showManager() {
+        return "manager";
     }
 
 }

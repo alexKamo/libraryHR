@@ -1,0 +1,6 @@
+1. CRUD Operations front end for Departments etc
+2. Log out button
+3. Validations (password must be at lease 8 chars) put validations such as @NotEmpty and @Min @Max etc
+4. Set up security with DB
+5. User case (descriptions) create story  for access for users and employees and managers
+    ex: a users with role "x" can do  login and log out, search departments
