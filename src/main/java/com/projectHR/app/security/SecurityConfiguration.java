@@ -29,9 +29,9 @@ public class SecurityConfiguration {
 //
 //        http.authorizeHttpRequests(configurer ->
 //                        configurer
-//                                .requestMatchers("/").hasAnyRole("EMPLOYEE")
-//                                .requestMatchers("/leaders/**").hasRole("EMPLOYEE")
-//                                .requestMatchers("/systems/**").hasRole("MANAGER")
+//                                .requestMatchers("/").hasAnyRole()
+//                                .requestMatchers("/employee/**").hasRole("EMPLOYEE")
+//                                .requestMatchers("/manager/**").hasRole("MANAGER")
 //                                .anyRequest().authenticated()
 //                )
 //                .formLogin(form ->
@@ -80,7 +80,7 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests(configurer ->
                         configurer
-                                .requestMatchers("/").hasAnyRole("USER")
+                                .requestMatchers("/").hasAnyRole("USER","EMPLOYEE","MANAGER")
                                 .requestMatchers("/employee/**").hasRole("EMPLOYEE")
                                 .requestMatchers("/manager/**").hasRole("MANAGER")
                                 .anyRequest().authenticated()
