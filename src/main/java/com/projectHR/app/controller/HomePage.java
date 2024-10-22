@@ -30,6 +30,7 @@ public class HomePage {
     @GetMapping("/visitors")
     public String showUsers() {
         return "visitors";
+
     }
 
 }
