@@ -52,7 +52,7 @@ public class EmployeeController {
         Employee theEmployee = employeeService.findByIdEmployee(theId);
 
         // set employee as a model attribute to pre-populate the form
-        theModel.addAttribute("employees", theEmployee);
+        theModel.addAttribute("employee", theEmployee);
 
         // send over to our form
         return "employees/employee-form";
