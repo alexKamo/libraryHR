@@ -42,9 +42,13 @@
         <tbody>
         <tr th:each="tempEmployee : ${employees}">
 
-            <td th:text="${tempEmployee.firstName}" />
-            <td th:text="${tempEmployee.lastName}" />
-            <td th:text="${tempEmployee.email}" />
+            <td th:text="${tempEmployee.emp_id}" />
+            <td th:text="${tempEmployee.emp_fullname}" />
+            <td th:text="${tempEmployee.start_date}" />
+            <td th:text="${tempEmployee.end_date}" />
+            <td th:text="${tempEmployee.salary}" />
+            <td th:text="${tempEmployee.department_name}" />
+            <td th:text="${tempEmployee.department_id}" />
 
             <td>
                 <div class="row">
