@@ -43,7 +43,7 @@
 
             <td th:text="${tempUser.userId}" />
             <td th:text="${tempUser.fullName}" />
-            <td th:text="${tempUser.date_of_birth}" />
+            <td th:text="${tempUser.dateOfBirth}" />
             <td th:text="${tempUser.address}" />
 
             <td>
@@ -53,7 +53,7 @@
                         <!-- Add "update" button/link -->
                         <form action="#" th:action="@{/users/showFormForUpdate}" method="POST">
 
-                            <input type="hidden" name="hr_userId" th:value="${tempUser.userid}" />
+                            <input type="hidden" name="userId" th:value="${tempUser.userid}" />
                             <button type="submit" class="btn btn-info btn-sm me-1" style="float:left;">Update</button>
 
                         </form>
