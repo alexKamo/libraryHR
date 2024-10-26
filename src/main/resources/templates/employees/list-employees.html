@@ -25,6 +25,7 @@
         Add Employee
     </a>
 
+
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
         <tr>
@@ -38,6 +39,7 @@
             <th>Action</th>
         </tr>
         </thead>
+
 
         <tbody>
         <tr th:each="tempEmployee : ${employees}">
@@ -72,6 +74,7 @@
                             </button>
 
                         </form>
+
                     </div>
 
                 </div>
@@ -80,6 +83,9 @@
         </tr>
         </tbody>
     </table>
+
+    <br><br>
+    <a th:href="@{/}">Back to Home Page</a>
 
 </div>
 
