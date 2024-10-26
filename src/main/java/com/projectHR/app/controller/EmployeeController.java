@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.projectHR.app.dao.EmployeeDAOImpl;
 import com.projectHR.app.entity.Employee;
+import com.projectHR.app.service.EmployeeService;
 import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,20 +14,19 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    private EntityManager entityManager;
-    EmployeeDAOImpl employeeDAO;
+     private EmployeeService employeeService;
 
-    public EmployeeController(EntityManager thEntityManager) {
-        entityManager = thEntityManager;
+    public EmployeeController(EmployeeService employeeService){
+         this.employeeService = employeeService;
     }
 
     // add mapping for "/list"
 
-    @GetMapping("/listEmployee")
+    @GetMapping("/list")
     public String listEmployees(Model theModel) {
 
         // get the employees from db
-        List<Employee> theEmployees = employeeDAO.findEmployee();
+        List<Employee> theEmployees = employeeService.findEmployee();
 
         // add to the spring model
         theModel.addAttribute("employees", theEmployees);
@@ -50,7 +50,7 @@ public class EmployeeController {
                                     Model theModel) {
 
         // get the employee from the service
-        Employee theEmployee = employeeDAO.findByIdEmployee(theId);
+        Employee theEmployee = employeeService.findByIdEmployee(theId);
 
         // set employee as a model attribute to pre-populate the form
         theModel.addAttribute("employee", theEmployee);
@@ -63,7 +63,7 @@ public class EmployeeController {
     public String saveEmployee(@ModelAttribute("employee") Employee theEmployee) {
 
         // save the employee
-        employeeDAO.saveEmployee(theEmployee);
+        employeeService.saveEmployee(theEmployee);
 
         // use a redirect to prevent duplicate submissions
         return "redirect:/employees/list";
@@ -73,7 +73,7 @@ public class EmployeeController {
     public String delete(@RequestParam("employeeId") int theId) {
 
         // delete the employee
-        employeeDAO.deleteByIdEmployee(theId);
+        employeeService.deleteByIdEmployee(theId);
 
         // redirect to /employees/list
         return "redirect:/employees/list";
