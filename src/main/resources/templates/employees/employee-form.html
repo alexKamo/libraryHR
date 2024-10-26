@@ -26,29 +26,30 @@
 
         <!-- Add hidden form field to handle update -->
         <input type="hidden" th:field="*{id}" />
+
         Full name
         <input type="text" th:field="*{fullName}"
-               class="form-control mb-4 w-25" placeholder="Full name">
+               class="form-control mb-4 w-25">
 
-        Start date
+        Start date (mm.dd.yyyy)
         <input type="text" th:field="*{startDate}"
-               class="form-control mb-4 w-25" placeholder="Start date">
+               class="form-control mb-4 w-25">
 
-        End date
+        End date (mm.dd.yyyy)
         <input type="text" th:field="*{endDate}"
-               class="form-control mb-4 w-25" placeholder="End date">
+               class="form-control mb-4 w-25">
 
         Salary
         <input type="text" th:field="*{salary}"
-               class="form-control mb-4 w-25" placeholder="Salary">
+               class="form-control mb-4 w-25">
 
         Department name
         <input type="text" th:field="*{depName}"
-               class="form-control mb-4 w-25" placeholder="Department name">
+               class="form-control mb-4 w-25">
 
         Department Id
         <input type="text" th:field="*{depId}"
-               class="form-control mb-4 w-25" placeholder="Department id">
+               class="form-control mb-4 w-25">
 
 
         <button type="submit" class="btn btn-info col-2">Save</button>
