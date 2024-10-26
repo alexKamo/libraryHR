@@ -2,10 +2,8 @@ package com.projectHR.app.controller;
 
 import java.util.List;
 
-import com.projectHR.app.dao.EmployeeDAOImpl;
 import com.projectHR.app.entity.Employee;
 import com.projectHR.app.service.EmployeeService;
-import jakarta.persistence.EntityManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +43,7 @@ public class EmployeeController {
         return "employees/employee-form";
     }
 
+
     @PostMapping("/showFormForUpdate")
     public String showFormForUpdate(@RequestParam("employeeId") int theId,
                                     Model theModel) {
@@ -53,7 +52,7 @@ public class EmployeeController {
         Employee theEmployee = employeeService.findByIdEmployee(theId);
 
         // set employee as a model attribute to pre-populate the form
-        theModel.addAttribute("employee", theEmployee);
+        theModel.addAttribute("employees", theEmployee);
 
         // send over to our form
         return "employees/employee-form";
