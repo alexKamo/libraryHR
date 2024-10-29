@@ -1,6 +1,7 @@
 package com.projectHR.app.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -33,6 +34,15 @@ public class LoggingAspect {
     public void before(JoinPoint joinPoint){
         logger.info("Logging message for method: " + joinPoint.getSignature().toShortString());
 
+        for(Object o : joinPoint.getArgs()){
+            logger.info("*** argument passed to the method is: " + o);
+        }
+    }
+
+    @AfterReturning(pointcut = "forAppFlow()", returning = "res")
+    public void afterReturning(JoinPoint  joinPoint, Object res){
+        logger.info("Logging message for method: " + joinPoint.getSignature().toShortString());
+        logger.info("returns: " + res);
     }
 
 }
