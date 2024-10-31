@@ -43,7 +43,7 @@ public class UserController {
 
 
     @PostMapping("/showFormForUpdate")
-    public String showFormForUpdate(@RequestParam("id") int theId,
+    public String showFormForUpdate(@RequestParam("userId") int theId,
                                     Model theModel) {
 
         // get the employee from the service
@@ -67,7 +67,7 @@ public class UserController {
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam("id") int theId) {
+    public String delete(@RequestParam("userId") int theId) {
 
         // delete the user
         userService.deleteByIdHrUser(theId);
