@@ -1,7 +1,7 @@
 package com.projectHR.app.service;
 
-import com.projectHR.app.dao.HR_UserDAO;
-import com.projectHR.app.entity.HR_User;
+import com.projectHR.app.dao.UserDAO;
+import com.projectHR.app.entity.User;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,28 +9,28 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class HRUserServiceImpl implements HRUserService{
+public class UserServiceImpl implements UserService {
 
-    HR_UserDAO userDAO;
+    UserDAO userDAO;
 
     @Autowired
-    public HRUserServiceImpl(HR_UserDAO userDAO){
+    public UserServiceImpl(UserDAO userDAO){
         this.userDAO = userDAO;
     }
 
     @Override
-    public List<HR_User> findUser() {
+    public List<User> findUser() {
         return userDAO.findUser();
     }
 
     @Override
-    public HR_User findByIdHrUser(int id) {
+    public User findByIdHrUser(int id) {
         return userDAO.findByIdHrUser(id);
     }
 
     @Transactional
     @Override
-    public HR_User saveHrUser(HR_User hrUser) {
+    public User saveHrUser(User hrUser) {
         return userDAO.saveHrUser(hrUser);
     }
 

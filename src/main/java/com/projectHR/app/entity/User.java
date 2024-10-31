@@ -3,8 +3,8 @@ package com.projectHR.app.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "hr_user")
-public class HR_User {
+@Table(name = "user")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +20,10 @@ public class HR_User {
     @Column(name = "address")
     private String address;
 
-    public HR_User() {
+    public User() {
     }
 
-    public HR_User(int userId, String fullName, String dateOfBirth, String address) {
+    public User(int userId, String fullName, String dateOfBirth, String address) {
         this.userId = userId;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
@@ -64,7 +64,7 @@ public class HR_User {
 
     @Override
     public String toString() {
-        return "HR_User{" +
+        return "User{" +
                 "userId=" + userId +
                 ", fullName='" + fullName + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +

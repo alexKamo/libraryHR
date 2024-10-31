@@ -1,7 +1,7 @@
 package com.projectHR.app.controller;
 
-import com.projectHR.app.entity.HR_User;
-import com.projectHR.app.service.HRUserService;
+import com.projectHR.app.entity.User;
+import com.projectHR.app.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,17 +12,17 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private HRUserService hrUserService;
+    private UserService userService;
 
-    public UserController (HRUserService hrUserService){
-        this.hrUserService = hrUserService;
+    public UserController (UserService userService){
+        this.userService = userService;
     }
 
     @GetMapping("/list")
     public String listUsers(Model theModel) {
 
         // get the users from db
-        List<HR_User> theUser = hrUserService.findUser();
+        List<User> theUser = userService.findUser();
 
         // add to the spring model
         theModel.addAttribute("users", theUser);
@@ -34,7 +34,7 @@ public class UserController {
     public String showFormForAdd(Model theModel) {
 
         // create model attribute to bind form data
-        HR_User theUser = new HR_User();
+        User theUser = new User();
 
         theModel.addAttribute("user", theUser);
 
@@ -43,11 +43,11 @@ public class UserController {
 
 
     @PostMapping("/showFormForUpdate")
-    public String showFormForUpdate(@RequestParam("userId") int theId,
+    public String showFormForUpdate(@RequestParam("id") int theId,
                                     Model theModel) {
 
         // get the employee from the service
-        HR_User theUser = hrUserService.findByIdHrUser(theId);
+        User theUser = userService.findByIdHrUser(theId);
 
         // set user as a model attribute to pre-populate the form
         theModel.addAttribute("user", theUser);
@@ -57,20 +57,20 @@ public class UserController {
     }
 
     @PostMapping("/save")
-    public String saveUser(@ModelAttribute("user") HR_User theUser) {
+    public String saveUser(@ModelAttribute("user") User theUser) {
 
         // save the user
-        hrUserService.saveHrUser(theUser);
+        userService.saveHrUser(theUser);
 
         // use a redirect to prevent duplicate submissions
         return "redirect:/users/list";
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam("userId") int theId) {
+    public String delete(@RequestParam("id") int theId) {
 
         // delete the user
-        hrUserService.deleteByIdHrUser(theId);
+        userService.deleteByIdHrUser(theId);
 
         // redirect to /users/list
         return "redirect:/users/list";
