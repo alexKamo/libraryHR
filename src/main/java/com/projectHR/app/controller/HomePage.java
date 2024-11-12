@@ -20,6 +20,7 @@ public class HomePage {
 
     // add request mapping for /manager
 
+
     @GetMapping("/manager")
     public String showManager() {
         return "manager";
